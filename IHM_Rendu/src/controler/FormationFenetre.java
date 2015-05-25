@@ -29,6 +29,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author xing
+ * @author TAN
  */
 public class FormationFenetre extends JFrame {
     private FormationFenetre nf;
@@ -48,9 +49,9 @@ public class FormationFenetre extends JFrame {
     }
 
     private void initComponents() {
-        nomText = new JTextField("   ",10);
-        dureeSText = new JTextField("   ",10);
-        dureeFmText = new JTextField("  ",10);
+        nomText = new JTextField("          ",10);
+        dureeSText = new JTextField("           ",10);
+        dureeFmText = new JTextField("          ",10);
         
         panelInfo = new JPanel();
         panelSubmit = new JPanel();
@@ -101,28 +102,34 @@ public class FormationFenetre extends JFrame {
 
         c.gridx = 0;
         c.gridy = 0;
+        c.gridwidth = 30;
         panelInfo.add(new JLabel("Nom de formation: ", 10), c);
 
-        c.gridx = 1;
+        c.gridx = 40;
         c.gridy = 0;
+        c.gridwidth = 300;
         panelInfo.add(nomText, c);
        //nomText.setPreferredSize(new Dimension(100,20));
 
         c.gridx = 0;
         c.gridy = 1;
-        panelInfo.add(new JLabel("Durée de formation: ", 10), c);
+        c.gridwidth = 30;
+        panelInfo.add(new JLabel("Durée de formation: ",10), c);
 
-        c.gridx = 1;
+        c.gridx = 40;
         c.gridy = 1;
+        c.gridwidth = 300;
         panelInfo.add(dureeFmText, c);
       //   nomText.setPreferredSize(new Dimension(100,20));
          
         c.gridx = 0;
         c.gridy = 2;
-        panelInfo.add(new JLabel("   Duréé type d'une séance: ", 10), c);
+        c.gridwidth = 30;
+        panelInfo.add(new JLabel("Duréé type d'une séance: ", 10), c);
 
-        c.gridx = 1;
+        c.gridx = 40;
         c.gridy = 2;
+        c.gridwidth = 300;
         panelInfo.add(dureeSText, c);
          //nomText.setPreferredSize(new Dimension(100,20));
         getContentPane().add(panelInfo);
