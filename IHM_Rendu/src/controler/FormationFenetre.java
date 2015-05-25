@@ -31,7 +31,7 @@ import javax.swing.table.DefaultTableModel;
  * @author xing
  * @author TAN
  */
-public class FormationFenetre extends JFrame {
+public class FormationFenetre extends JFrame  {
     private FormationFenetre nf;
     private DefaultTableModel tableModel;
     private JTable moduleTable;
