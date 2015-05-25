@@ -20,6 +20,12 @@ public class Seance {
     public Seance() {
     }
 
+    public Seance(int dureeSeance, Date date, String heure) {
+        this.dureeSeance = dureeSeance;
+        this.date = date;
+        this.heure = heure;
+    }
+
     public Date getDate() {
         return date;
     }

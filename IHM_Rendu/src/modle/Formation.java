@@ -15,16 +15,89 @@ import java.util.List;
 
 
 public class Formation {
-    private String nom;
-    private int duree;
-    private Module[] listeModule;
 
+    /**
+     *
+     */
+    public String nom;
+
+    /**
+     *
+     */
+    public int duree;
+
+    /**
+     *
+     */
+    public List<Module> listeModule;
+
+    /**
+     *
+     */
     public Formation() {
     }
 
-   public void SetFormation(String string, int i, List<Module[]> mliste) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /**
+     *
+     * @param nom
+     * @param duree
+     * @param listeModule
+     */
+    public Formation(String nom, int duree, List<Module> listeModule) {
+        this.nom = nom;
+        this.duree = duree;
+        this.listeModule = listeModule;
     }
+
+    /**
+     *
+     * @param nom
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    /**
+     *
+     * @param duree
+     */
+    public void setDuree(int duree) {
+        this.duree = duree;
+    }
+
+    /**
+     *
+     * @param listeModule
+     */
+    public void setListeModule(List<Module> listeModule) {
+        this.listeModule = listeModule;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getDuree() {
+        return duree;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<Module> getListeModule() {
+        return listeModule;
+    }
+
+  
 
     
 
