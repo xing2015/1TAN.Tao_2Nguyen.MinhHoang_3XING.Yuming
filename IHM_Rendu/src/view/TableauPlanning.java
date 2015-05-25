@@ -1,6 +1,6 @@
-package View;
+package view;
 
-import View.TableauPlanning.TableauPlanningModele;
+import view.TableauPlanning.TableauPlanningModele;
 import java.awt.Dimension;
 import java.util.Observable;
 import java.util.Observer;
