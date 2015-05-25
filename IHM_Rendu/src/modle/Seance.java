@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author IT
+ * @author xing
  */
 public class Seance {
     private int dureeSeance;

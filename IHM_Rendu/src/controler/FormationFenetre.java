@@ -68,14 +68,14 @@ public class FormationFenetre extends JFrame {
         mainLayout.gridy = 0;
         getContentPane().add(panelInfo);
         add(panelInfo, mainLayout);
-        panelInfo.setPreferredSize(new Dimension(900, 110));
+        panelInfo.setPreferredSize(new Dimension(760, 110));
         panelInfo.setBorder(BorderFactory.createTitledBorder("Formation"));
         
         mainLayout.gridx = 0;
         mainLayout.gridy = 1;
         getContentPane().add(panelModule);
         add(panelModule, mainLayout);
-        panelModule.setPreferredSize(new Dimension(760, 200));
+        panelModule.setPreferredSize(new Dimension(750, 200));
 
         mainLayout.gridx = 0;
         mainLayout.gridy = 2;
@@ -139,7 +139,7 @@ public class FormationFenetre extends JFrame {
         /**
          * PanelModule : liste des modules
          */
-        Object[][] mRow = {{null, null, null, null}};
+        Object[][] mRow = {};
         Object[] mCol = {"Module", "abbreviation", "Couleur", "Nombre de séance","Durée "};
         tableModel = new DefaultTableModel(mRow, mCol);
         moduleTable = new JTable(tableModel);
@@ -160,7 +160,7 @@ public class FormationFenetre extends JFrame {
         }
         );
         panelModule.add(jScrollPane1);
-        jScrollPane1.setPreferredSize(new Dimension(900, 150));
+        jScrollPane1.setPreferredSize(new Dimension(750, 150));
 
 //PanelAdd************************************************************************************        
         /**

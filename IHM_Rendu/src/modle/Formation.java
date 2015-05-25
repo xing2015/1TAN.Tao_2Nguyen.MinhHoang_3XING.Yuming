@@ -6,6 +6,7 @@
 package modle;
 
 import java.awt.Color;
+import java.util.List;
 
 /**
  *
@@ -18,34 +19,24 @@ public class Formation {
     private int duree;
     private Module[] listeModule;
 
-    public Formation(String nom, int duree) {
-        this.nom = nom;
-        this.duree = duree;
+    public Formation() {
     }
 
-    public String getNom() {
-        return nom;
+   public void SetFormation(String string, int i, List<Module[]> mliste) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public int getDuree() {
-        return duree;
-    }
-
-    public void setDuree(int duree) {
-        this.duree = duree;
-    }
     
-    public void setListeModule(Module m) {
-        
-    }  
+
+   
     
-    public void getListeModule() {
-        
-    }
+
+
+    
+
+   
+
+   
     
     
 }
