@@ -9,7 +9,7 @@ import java.awt.Color;
 
 /**
  *
- * @author IT
+ * @author xing
  */
 public class Module {
     private String nom;
@@ -17,12 +17,18 @@ public class Module {
     private Color couleur;
     private int nbSeance;
 
-    public Module(String nom, String abbreviation, Color couleur, int nbSeance) {
-        this.nom = nom;
-        this.abbreviation = abbreviation;
-        this.couleur = couleur;
-        this.nbSeance = nbSeance;
+    /*  public Module(String nom, String abbreviation, Color couleur, int nbSeance) {
+    this.nom = nom;
+    this.abbreviation = abbreviation;
+    this.couleur = couleur;
+    this.nbSeance = nbSeance;
+    }*/
+    public Module() {
     }
+
+
+   
+  
 
     public String getNom() {
         return nom;
