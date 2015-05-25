@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author XING
+ * @author TAN
  */
 public class MainFrame extends javax.swing.JFrame {
     /**
@@ -57,6 +58,11 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Année:");
 
@@ -146,6 +152,10 @@ public class MainFrame extends javax.swing.JFrame {
          //f.getNf();
        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**
      * @param args the command line arguments
