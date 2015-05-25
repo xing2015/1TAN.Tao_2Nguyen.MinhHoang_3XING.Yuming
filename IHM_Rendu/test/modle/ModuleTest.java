@@ -22,7 +22,7 @@ public class ModuleTest {
     
     @Before
     public void initTest(){
-     m = new Module("Java","java",red,100);
+     m = new Module("Java","java",red,100,200);
     }
     
     

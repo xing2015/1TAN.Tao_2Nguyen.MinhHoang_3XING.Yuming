@@ -29,8 +29,8 @@ public class FormationTest {
     public void testInit() {
         f = new Formation();
         mliste = null;
-        m1 =new Module("Java","java",red,100);
-        m2 =new Module("Base de données","BD",blue,100);
+        m1 =new Module("Java","java",red,100,150);
+        m2 =new Module("Base de données","BD",blue,100,150);
         
     }
      public FormationTest() {

@@ -12,8 +12,6 @@ import java.util.List;
  *
  * @author xing
  */
-
-
 public class Formation {
 
     /**
@@ -97,19 +95,4 @@ public class Formation {
         return listeModule;
     }
 
-  
-
-    
-
-   
-    
-
-
-    
-
-   
-
-   
-    
-    
 }
