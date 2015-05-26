@@ -48,7 +48,8 @@ public class FormationFenetre extends JFrame {
         setTitle("Gestion de formation");
         setBounds(5, 5, 950, 450);
         //setMaximumSize(new Dimension(600, 600));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      //  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         initComponents();
     }
 
@@ -271,9 +272,9 @@ public class FormationFenetre extends JFrame {
     /**
      * @param args
      */
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         // TODO Auto-generated method stub
         FormationFenetre jTableDefaultTableModelTest = new FormationFenetre();
         jTableDefaultTableModelTest.setVisible(true);
-    }
+    }*/
 }

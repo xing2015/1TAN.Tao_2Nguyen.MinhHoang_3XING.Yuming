@@ -46,8 +46,8 @@ public class ModuleFenetre extends JFrame {
         setTitle("Gestion de module");
         setBounds(5, 5, 950, 450);
         //setMaximumSize(new Dimension(600, 600));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+       // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         initComponents();
     }
 
@@ -229,9 +229,9 @@ public class ModuleFenetre extends JFrame {
     /**
      * @param args
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         // TODO Auto-generated method stub
         ModuleFenetre m = new ModuleFenetre();
         m.setVisible(true);
-    }
+    }*/
 }
