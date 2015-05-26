@@ -20,7 +20,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import controler.Calendrier;
+import model.Calendrier;
 import controler.ExporterHtml;
 import java.awt.Dimension;
 
