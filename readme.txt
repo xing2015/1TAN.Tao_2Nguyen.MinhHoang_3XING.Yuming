@@ -9,8 +9,8 @@ classe Seance: Définir une séance.
 
 view (présentation, interface utilisateur):
 classe Mainframe: La fenêtre principale de notre programme.(intégrer le panel de      
-     planning, les bouttons de gestion de formation et module)
-classe CalendrierPanel: Le panel de planning .
+     planning, les bouttons de gestion de formation et de module)
+classe CalendrierPanel: Le panel de planning.
 
 controller (logique de contrôle, gestion des événements, synchronisation):
 classe FormationFenetre: charger la gestion des événements de synchronisation pour mettre à jour la modèle “Formation” et les synchroniser.
