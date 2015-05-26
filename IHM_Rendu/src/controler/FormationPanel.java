@@ -31,8 +31,9 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author xing
- * @author TAN
+ * @author YUMING
+ * @author TAO
+ * @author MINHHOANG
  */
 public class FormationPanel extends JPanel {
 

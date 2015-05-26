@@ -14,8 +14,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * @author YUMING
  * @author TAN
+ * @author MINHHOANG
  */
 public class CalendrierTest {
     

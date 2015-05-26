@@ -7,7 +7,9 @@ import java.util.Calendar;
  * and open the template in the editor.
  */
 /**
+ * @author YUMING
  * @author TAN
+ * @author MINHHOANG
  */
 public class Calendrier {
 	private int annee;

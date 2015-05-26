@@ -10,8 +10,9 @@ import java.io.*;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author xing
+ * @author YUMING
+ * @author TAO
+ * @author MINHHOANG
  */
 public class ExporterHtml {
 

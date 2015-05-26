@@ -7,7 +7,9 @@ package view;
 
 /**
  *
- * @author IT
+ * @author YUMING
+ * @author TAO
+ * @author MINHHOANG
  */
 public class MainFrame extends javax.swing.JFrame {
 

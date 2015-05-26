@@ -9,8 +9,9 @@ import java.awt.Color;
 import java.util.List;
 
 /**
- *
- * @author xing
+ * @author YUMING
+ * @author TAO
+ * @author MINHHOANG
  */
 public class Formation {
 

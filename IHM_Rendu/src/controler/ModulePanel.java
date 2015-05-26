@@ -29,8 +29,9 @@ import model.Module;
 
 /**
  *
- * @author xing
- * @author TAN
+ * @author YUMING
+ * @author TAO
+ * @author MINHHOANG
  */
 public class ModulePanel extends JPanel {
 
