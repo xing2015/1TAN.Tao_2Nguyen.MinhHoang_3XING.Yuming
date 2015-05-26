@@ -25,7 +25,9 @@ import java.awt.Dimension;
 
 /**
  *
- * @author TAN
+ * @author YUMING
+ * @author TAO
+ * @author MINHHOANG
  */
 public class CalendrierPanel extends javax.swing.JPanel implements ActionListener {
         Choice anneeChoice = new Choice();
