@@ -9,16 +9,21 @@ import model.Seance;
 import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
  * @author xing
  */
 public class SeanceTest {
+       Seance s;
     
     public SeanceTest() {
     }
-
+    @Before
+    public void initTest(){
+    // s = new Seance(2, 05/2015/05,"3h", "JAVA","ESIAG");
+    }
     /**
      * Test of getDate method, of class Seance.
      */
