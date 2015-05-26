@@ -23,6 +23,7 @@ import javax.swing.JTextField;
 import model.Calendrier;
 import controler.ExporterHtml;
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -102,7 +103,7 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
                      {
                       annee = Integer.parseInt(anneeChoice.getSelectedItem());
                       ex = new ExporterHtml(annee);
-                      
+                       
                       }
                   }
                  }

@@ -7,6 +7,7 @@ package controler;
  */
 import java.util.*;
 import java.io.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -61,11 +62,13 @@ public class ExporterHtml {
             String fileame = String.valueOf(calendar.getTimeInMillis()) + ".html";
             fileame = "C:\\Users\\IT\\Desktop\\" + fileame;// le chemin de fichier exporté
             FileOutputStream fileoutputstream = new FileOutputStream(fileame);// serialization de données
+             JOptionPane.showMessageDialog(null, "Exporter ok! \t le chemin de fichier exporté: exporter"+fileame);
             System.out.print("le chemin de fichier exporté:");
             System.out.print(fileame);
             byte tag_bytes[] = templateContent.getBytes();
             fileoutputstream.write(tag_bytes);
             fileoutputstream.close();
+         
         } catch (IOException e) {
             System.out.print(e.toString());
         }
@@ -74,7 +77,7 @@ public class ExporterHtml {
     
 
     
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         
-    }
+    }*/
 }
