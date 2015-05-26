@@ -6,8 +6,8 @@
 
 package modle;
 
-import static java.awt.Color.blue;
-import static java.awt.Color.red;
+/*import static java.awt.Color."blue";
+import static java.awt.Color."red";*/
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
@@ -29,8 +29,8 @@ public class FormationTest {
     public void testInit() {
         f = new Formation();
         mliste = null;
-        m1 =new Module("Java","java",red,100);
-        m2 =new Module("Base de données","BD",blue,100);
+        m1 =new Module("Java","java","red",100,150);
+        m2 =new Module("Base de données","BD","blue",100,150);
         
     }
      public FormationTest() {
@@ -74,7 +74,7 @@ public class FormationTest {
         // TODO review the generated test code and remove the default call to fail.
         assertEquals("Java",f.listeModule.get(0).getNom());
         assertEquals("java",f.listeModule.get(0).getAbbreviation());
-        assertEquals(red,f.listeModule.get(0).getCouleur());
+        assertEquals("red",f.listeModule.get(0).getCouleur());
         assertEquals(100,f.listeModule.get(0).getNbSeance());
     }
 
