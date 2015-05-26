@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controler.Calendrier;
+import controler.ExporterHtml;
 import java.awt.Dimension;
 
 /**
@@ -30,9 +31,11 @@ import java.awt.Dimension;
  * @author MINHHOANG
  */
 public class CalendrierPanel extends javax.swing.JPanel implements ActionListener {
+        ExporterHtml ex   ;
         Choice anneeChoice = new Choice();
 	Choice moisChoice = new Choice();
 	JButton jButton1 = new JButton("Valider");
+        JButton exporter = new JButton("Exporter en html");
 	JLabel dayLabels[] = new JLabel[42];
 	JTextField textFieldsAM[] = new JTextField[42];
 	JTextField textFieldsPM[] = new JTextField[42];
@@ -91,6 +94,21 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
 		pSouth.add(anneeChoice);
 		pSouth.add(moisChoice);
 		pSouth.add(jButton1);
+                
+                exporter.addActionListener(new ActionListener() {
+                  public void actionPerformed(ActionEvent e) 
+                  {
+                     if (e.getSource() == exporter)
+                     {
+                      annee = Integer.parseInt(anneeChoice.getSelectedItem());
+                      ex = new ExporterHtml(annee);
+                      
+                      }
+                  }
+                 }
+                );
+                 
+                pSouth.add(exporter); 
 
 		ScrollPane scrollPane = new ScrollPane();
 		scrollPane.add(pCenter);              
@@ -122,7 +140,19 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
 			}
 
 		}
+            
+              
 
 	}
-
+        
+     
+        
+ public static void main(String args[]) {
+        JFrame f=new JFrame();
+          CalendrierPanel c=new CalendrierPanel();
+        f.setVisible(true);
+        f.add(c);
+      
+        
+    }
 }

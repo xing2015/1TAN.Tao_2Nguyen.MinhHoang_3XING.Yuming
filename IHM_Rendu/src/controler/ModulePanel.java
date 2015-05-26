@@ -45,7 +45,7 @@ public class ModulePanel extends JPanel {
     public ModulePanel() {
         super();
         //setTitle("Gestion de module");
-        setBounds(5, 5, 950, 450);
+        setBounds(5, 5, 950, 350);
         //setMaximumSize(new Dimension(600, 600));
         // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //setDefaultCloseOperation(DISPOSE_ON_CLOSE);
