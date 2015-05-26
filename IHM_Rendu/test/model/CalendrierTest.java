@@ -5,6 +5,7 @@
  */
 package model;
 
+import model.Calendrier;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,27 +15,21 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author IT
+ * @author TAN
  */
 public class CalendrierTest {
+    
+    Calendrier c;
     
     public CalendrierTest() {
     }
     
-  
-
-    /**
-     * Test of setAnnee method, of class Calendrier.
-     */
-    @Test
-    public void testSetAnnee() {
-        System.out.println("setAnnee");
-        int annee = 0;
-        Calendrier instance = new Calendrier();
-        instance.setAnnee(annee);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    @Before
+    public void initTest(){
+     c = new Calendrier(2015,5);
     }
+
+  
 
     /**
      * Test of getAnnee method, of class Calendrier.
@@ -42,26 +37,14 @@ public class CalendrierTest {
     @Test
     public void testGetAnnee() {
         System.out.println("getAnnee");
-        Calendrier instance = new Calendrier();
-        int expResult = 0;
-        int result = instance.getAnnee();
+        int expResult = 2015;
+        int result = c.getAnnee();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
-    /**
-     * Test of setMois method, of class Calendrier.
-     */
-    @Test
-    public void testSetMois() {
-        System.out.println("setMois");
-        int mois = 0;
-        Calendrier instance = new Calendrier();
-        instance.setMois(mois);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+
 
     /**
      * Test of getMois method, of class Calendrier.
@@ -69,12 +52,11 @@ public class CalendrierTest {
     @Test
     public void testGetMois() {
         System.out.println("getMois");
-        Calendrier instance = new Calendrier();
-        int expResult = 0;
-        int result = instance.getMois();
+        int expResult = 5;
+        int result = c.getMois();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -83,12 +65,11 @@ public class CalendrierTest {
     @Test
     public void testGetCalendrier() {
         System.out.println("getCalendrier");
-        Calendrier instance = new Calendrier();
-        String[] expResult = null;
-        String[] result = instance.getCalendrier();
+        String[] expResult = {null,null,null,null,"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31",null,null,null,null,null,null,null};
+        String[] result = c.getCalendrier();
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
     
 }

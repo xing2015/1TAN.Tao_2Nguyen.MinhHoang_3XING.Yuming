@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package modle;
+package model;
 import model.Seance;
 import java.util.Date;
 import org.junit.Test;

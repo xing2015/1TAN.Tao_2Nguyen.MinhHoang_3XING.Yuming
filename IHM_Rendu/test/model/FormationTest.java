@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package modle;
+package model;
 
 /*import static java.awt.Color."blue";
 import static java.awt.Color."red";*/
