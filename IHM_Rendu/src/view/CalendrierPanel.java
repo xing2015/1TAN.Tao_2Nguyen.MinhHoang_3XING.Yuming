@@ -146,7 +146,7 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
 	}
         
      
-        
+   /*     
  public static void main(String args[]) {
         JFrame f=new JFrame();
           CalendrierPanel c=new CalendrierPanel();
@@ -154,5 +154,5 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
         f.add(c);
       
         
-    }
+    }*/
 }
