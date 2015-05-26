@@ -26,6 +26,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -33,9 +34,9 @@ import javax.swing.table.DefaultTableModel;
  * @author xing
  * @author TAN
  */
-public class FormationFenetre extends JFrame {
+public class FormationPanel extends JPanel {
 
-    private FormationFenetre nf;
+    // private FormationFenetre nf;
     private DefaultTableModel tableModel;
     private JTable moduleTable;
     private JPanel panelInfo, panelModule, panelAdd, panelSubmit;
@@ -43,13 +44,13 @@ public class FormationFenetre extends JFrame {
     private JScrollPane jScrollPane1;
     private JComboBox mListe;
 
-    public FormationFenetre() {
+    public FormationPanel() {
         super();
-        setTitle("Gestion de formation");
+        // setTitle("Gestion de formation");
         setBounds(5, 5, 950, 450);
         //setMaximumSize(new Dimension(600, 600));
-      //  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        //  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         initComponents();
     }
 
@@ -71,27 +72,31 @@ public class FormationFenetre extends JFrame {
 
         mainLayout.gridx = 0;
         mainLayout.gridy = 0;
-        getContentPane().add(panelInfo);
+        //getContentPane().add(panelInfo);
+        add(panelInfo);
         add(panelInfo, mainLayout);
         panelInfo.setPreferredSize(new Dimension(760, 110));
         panelInfo.setBorder(BorderFactory.createTitledBorder("Formation"));
 
         mainLayout.gridx = 0;
         mainLayout.gridy = 1;
-        getContentPane().add(panelModule);
+        //getContentPane().add(panelModule);
+        add(panelModule);
         add(panelModule, mainLayout);
         panelModule.setPreferredSize(new Dimension(750, 200));
 
         mainLayout.gridx = 0;
         mainLayout.gridy = 2;
-        getContentPane().add(panelAdd);
+       // getContentPane().add(panelAdd);
+        add(panelAdd);
         add(panelAdd, mainLayout);
         panelAdd.setBorder(BorderFactory.createEtchedBorder());
         panelAdd.setPreferredSize(new Dimension(900, 50));
 
         mainLayout.gridx = 0;
         mainLayout.gridy = 3;
-        getContentPane().add(panelSubmit);
+        //getContentPane().add(panelSubmit);
+        add(panelSubmit);
         add(panelSubmit, mainLayout);
 
 //PanelInfo************************************************************************************
@@ -123,7 +128,7 @@ public class FormationFenetre extends JFrame {
         c.gridy = 1;
         c.gridwidth = 300;
         panelInfo.add(dureeFmText, c);
-      //   nomText.setPreferredSize(new Dimension(100,20));
+        //   nomText.setPreferredSize(new Dimension(100,20));
 
         c.gridx = 0;
         c.gridy = 2;
@@ -135,7 +140,8 @@ public class FormationFenetre extends JFrame {
         c.gridwidth = 300;
         panelInfo.add(dureeSText, c);
         //nomText.setPreferredSize(new Dimension(100,20));
-        getContentPane().add(panelInfo);
+      //  getContentPane().add(panelInfo);
+        add(panelInfo);
 
 //PanelModule************************************************************************************
         /**
@@ -203,23 +209,14 @@ public class FormationFenetre extends JFrame {
          }
          });
          panelAdd.add(updateButton);*/
-        
-         panelAdd.add(new JLabel("Module: "));
-         mListe= new JComboBox();
-         mListe.setModel(new DefaultComboBoxModel(new String[] { 
-         
-         
-         
-         }));
+        panelAdd.add(new JLabel("Module: "));
+        mListe = new JComboBox();
+        mListe.setModel(new DefaultComboBoxModel(new String[]{}));
 
-       
-         panelAdd.add(mListe);
-       
-         
-        
-         
-         final JButton addButton = new JButton("Ajouter");//ajouter
-         addButton.addActionListener(new ActionListener() {
+        panelAdd.add(mListe);
+
+        final JButton addButton = new JButton("Ajouter");//ajouter
+        addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String[] rowValues = {moduleText.getText(), abbText.getText(), colorText.getText(), seanceText.getText()};
                 tableModel.addRow(rowValues); //ajouter un ligne
@@ -232,7 +229,7 @@ public class FormationFenetre extends JFrame {
 
         });
         panelAdd.add(addButton);
-        
+
         final JButton delButton = new JButton("Supprimer");// supprimer un ligne
         delButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -272,9 +269,9 @@ public class FormationFenetre extends JFrame {
     /**
      * @param args
      */
-   /* public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        FormationFenetre jTableDefaultTableModelTest = new FormationFenetre();
-        jTableDefaultTableModelTest.setVisible(true);
-    }*/
+    /* public static void main(String[] args) {
+     // TODO Auto-generated method stub
+     FormationFenetre jTableDefaultTableModelTest = new FormationFenetre();
+     jTableDefaultTableModelTest.setVisible(true);
+     }*/
 }
