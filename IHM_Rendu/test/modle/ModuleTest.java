@@ -6,6 +6,7 @@
 
 package modle;
 
+import model.Module;
 import java.lang.String;
 
 import org.junit.Test;

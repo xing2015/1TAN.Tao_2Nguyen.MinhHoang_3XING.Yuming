@@ -8,6 +8,8 @@ package modle;
 
 /*import static java.awt.Color."blue";
 import static java.awt.Color."red";*/
+import model.Module;
+import model.Formation;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;

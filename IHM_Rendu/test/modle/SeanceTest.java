@@ -5,8 +5,7 @@
  */
 
 package modle;
-
-import Modle.Seance;
+import model.Seance;
 import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
