@@ -157,7 +157,7 @@ public class ModulePanel extends JPanel {
         final JButton addButton = new JButton("Ajouter");//ajouter
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String[] rowValues = {moduleText.getText(), abbText.getText(), colorText.getText(), seanceText.getText()};
+                String[] rowValues = {moduleText.getText(), abbText.getText(), colorText.getText(), seanceText.getText(),dureeMText.getText()};
                 tableModel.addRow(rowValues); //ajouter un ligne
                 int rowCount = moduleTable.getRowCount() + 1; //nb de ligne +1
                 moduleText.setText("");
@@ -240,9 +240,17 @@ public class ModulePanel extends JPanel {
      }
      return nf;
      }
-     */
+     
     /**
      * @param args
      */
-    
+     
+    public static void main(String args[]) {
+        JFrame f=new JFrame();
+         f.setBounds(5, 5, 950, 350);
+          ModulePanel c=new ModulePanel();
+        f.setVisible(true);
+        f.add(c);
+      
+     }
 }
