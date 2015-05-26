@@ -6,9 +6,8 @@
 
 package modle;
 
-import java.awt.Color;
-import static java.awt.Color.blue;
-import static java.awt.Color.red;
+import java.lang.String;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -22,7 +21,7 @@ public class ModuleTest {
     
     @Before
     public void initTest(){
-     m = new Module("Java","java",red,100,200);
+     m = new Module("Java","java","red",100,200);
     }
     
     
@@ -90,8 +89,8 @@ public class ModuleTest {
     @Test
     public void testGetCouleur() {
         System.out.println("getCouleur");
-        Color result = m.getCouleur();
-        assertEquals(red, result);
+        String result = m.getCouleur();
+        assertEquals("red", result);
         // TODO review the generated test code and remove the default call to fail.
      
     }
@@ -102,11 +101,11 @@ public class ModuleTest {
     @Test
     public void testSetCouleur() {
         System.out.println("setCouleur");
-        Color couleur = blue;
+        String couleur = "blue";
         m.setCouleur(couleur);
-        Color result = m.getCouleur();
+        String result = m.getCouleur();
         // TODO review the generated test code and remove the default call to fail.
-        assertEquals(blue, result);
+        assertEquals("blue", result);
     }
 
     /**

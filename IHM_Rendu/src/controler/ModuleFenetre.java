@@ -5,10 +5,6 @@
  */
 package controler;
 
-import java.awt.BorderLayout;
-import static java.awt.Color.blue;
-import static java.awt.Color.red;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -19,7 +15,6 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.BorderFactory;
-import static javax.swing.GroupLayout.PREFERRED_SIZE;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -58,10 +53,10 @@ public class ModuleFenetre extends JFrame {
 
     public void initModule() {
         mListe = new ArrayList<>();
-        mListe.add(new Module("Java", "java", red, 45,90));
-        mListe.add(new Module("Base de données", "BD", blue, 45,90));
+        mListe.add(new Module("Java", "java", "red", 45,90));
+        mListe.add(new Module("Base de données", "BD", "blue", 45,90));
     }
-
+ 
     private void initComponents() {
 
         panelSubmit = new JPanel();
@@ -96,14 +91,18 @@ public class ModuleFenetre extends JFrame {
         /**
          * PanelModule : liste des modules
          */
-        Object[][] mRow = { } ;
-        for (int i = 0; i < mListe.size(); i++) {
+        Object[][] mRow = null;
+       // Object[][] mRow = {{"Java","java", "red",45,90}};
+        /* for (int i = 0; i <= mListe.size(); i++) {
+            Module om = mListe.get(i);
             mRow[i][0]=mListe.get(i).getNom();
             mRow[i][1]=mListe.get(i).getAbbreviation();
             mRow[i][2]=mListe.get(i).getCouleur();
             mRow[i][3]=mListe.get(i).getNbSeance();
-            mRow[i][0]=mListe.get(i).getDuree();
-        }
+            mRow[i][4]=mListe.get(i).getDuree();
+        };*/
+        
+         
         Object[] mCol = {"Module", "abbreviation", "Couleur", "Nombre de séance", "Durée "};
     tableModel  = new DefaultTableModel(mRow, mCol);
     moduleTable  = new JTable(tableModel);
@@ -168,6 +167,7 @@ public class ModuleFenetre extends JFrame {
                 abbText.setText("" + rowCount);
                 colorText.setText("" + rowCount);
                 seanceText.setText("" + rowCount);
+                dureeMText.setText("" + rowCount);
             }
 
         });
@@ -182,6 +182,7 @@ public class ModuleFenetre extends JFrame {
                     tableModel.setValueAt(abbText.getText(), selectedRow, 1);
                     tableModel.setValueAt(colorText.getText(), selectedRow, 2);
                     tableModel.setValueAt(seanceText.getText(), selectedRow, 3);
+                    tableModel.setValueAt(dureeMText.getText(), selectedRow, 4);
                 }
             }
         });
@@ -230,7 +231,7 @@ public class ModuleFenetre extends JFrame {
      */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        ModuleFenetre jTableDefaultTableModelTest = new ModuleFenetre();
-        jTableDefaultTableModelTest.setVisible(true);
+        ModuleFenetre m = new ModuleFenetre();
+        m.setVisible(true);
     }
 }

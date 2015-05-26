@@ -5,7 +5,7 @@
  */
 package modle;
 
-import java.awt.Color;
+import java.lang.String;
 
 /**
  *
@@ -14,7 +14,7 @@ import java.awt.Color;
 public class Module {
     private String nom;
     private String abbreviation;
-    private Color couleur;
+    private String couleur;
     private int nbSeance;
     private int duree;
 
@@ -26,7 +26,7 @@ public class Module {
      * @param nbSeance
      * @param duree La durée en heures est affichée pour chaque module. 
      */
-    public Module(String nom, String abbreviation, Color couleur, int nbSeance,int duree) {
+    public Module(String nom, String abbreviation, String couleur, int nbSeance,int duree) {
     this.nom = nom;
     this.abbreviation = abbreviation;
     this.couleur = couleur;
@@ -58,11 +58,11 @@ public class Module {
     }
 
   
-    public Color getCouleur() {
+    public String getCouleur() {
         return couleur;
     }
 
-    public void setCouleur(Color couleur) {
+    public void setCouleur(String couleur) {
         this.couleur = couleur;
     }
 
