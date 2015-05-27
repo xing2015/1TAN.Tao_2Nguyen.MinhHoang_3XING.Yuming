@@ -6,7 +6,6 @@
 
 package model;
 import model.Seance;
-import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
