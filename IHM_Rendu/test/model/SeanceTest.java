@@ -72,11 +72,10 @@ public class SeanceTest {
     @Test
     public void testSetHeure() {
         System.out.println("setHeure");
-        String heure = "";
-        Seance instance = new Seance();
-        instance.setHeure(heure);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String heure = "apremidi";
+        s.setHeure(heure);
+        String result=s.getHeure();
+        assertEquals("apremidi", result);
     }
 
     /**
@@ -85,11 +84,10 @@ public class SeanceTest {
     @Test
     public void testSetModule() {
         System.out.println("setModule");
-        String module = "";
-        Seance instance = new Seance();
-        instance.setModule(module);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String module = "java";
+        s.setModule(module);
+        String result=s.getModule();
+        assertEquals("java", result);
     }
 
     /**
@@ -98,11 +96,11 @@ public class SeanceTest {
     @Test
     public void testSetFormation() {
         System.out.println("setFormation");
-        String formation = "";
-        Seance instance = new Seance();
-        instance.setFormation(formation);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String formation = "MIAGE";
+        s.setFormation(formation);
+     
+        String result=s.getFormation();
+        assertEquals("MIAGE", result);
     }
 
     /**
@@ -110,13 +108,11 @@ public class SeanceTest {
      */
     @Test
     public void testGetModule() {
-        System.out.println("getModule");
-        Seance instance = new Seance();
-        String expResult = "";
-        String result = instance.getModule();
+        System.out.println("getModule");    
+        String expResult = "JAVA";
+        String result = s.getModule();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -125,12 +121,11 @@ public class SeanceTest {
     @Test
     public void testGetFormation() {
         System.out.println("getFormation");
-        Seance instance = new Seance();
-        String expResult = "";
-        String result = instance.getFormation();
+       
+        String expResult = "ESIAG";
+        String result = s.getFormation();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     /**
      * Test of getDate method, of class Seance.

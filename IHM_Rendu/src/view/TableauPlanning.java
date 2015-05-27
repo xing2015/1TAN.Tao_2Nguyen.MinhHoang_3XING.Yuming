@@ -136,5 +136,5 @@ public class TableauPlanning extends javax.swing.JPanel implements Observer {
             }
         }
     
-   
+     
     }
