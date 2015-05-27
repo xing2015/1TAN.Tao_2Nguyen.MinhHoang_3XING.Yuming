@@ -13,14 +13,14 @@ import java.util.Date;
  * @author xing
  */
 public class Seance {
-    private int dureeSeance;
-    private Date date;
-    private String heure;/*mation or après-midi**/
+   // private int dureeSeance;
+    private String date;
+    private String heure;/*matin or après-midi**/
     private String module;
     private String formation;
     
-    public Seance(int dureeSeance, Date date, String heure, String module, String formation) {
-        this.dureeSeance = dureeSeance;
+    public Seance(String date, String heure, String module, String formation) {
+        //this.dureeSeance = dureeSeance;
         this.date = date;
         this.heure = heure;
         this.module = module;
@@ -31,23 +31,16 @@ public class Seance {
     public Seance() {
     }
 
-    public int getDureeSeance() {
-        return dureeSeance;
-    }
-
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
     public String getHeure() {
         return heure;
     }
+   
 
-    public void setDureeSeance(int dureeSeance) {
-        this.dureeSeance = dureeSeance;
-    }
-
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

@@ -33,7 +33,7 @@ public class ExporterHtml {
             String apremid5 = "";
 
 //chemin de template
-            String filePath = "C:\\Users\\IT\\Desktop\\exporter.html";
+            String filePath = "C:\\Users\\Administrator\\Desktop\\exporter.html";
             System.out.print(filePath);
             String templateContent = "";
             FileInputStream fileinputstream = new FileInputStream(filePath);// lire exporter.html
@@ -61,7 +61,7 @@ public class ExporterHtml {
             //nomer le fichier exporté avec l'heure de système. 
             Calendar calendar = Calendar.getInstance();
             String fileame = String.valueOf(calendar.getTimeInMillis()) + ".html";
-            fileame = "C:\\Users\\IT\\Desktop\\" + fileame;// le chemin de fichier exporté
+            fileame = "C:\\Users\\Administrator\\Desktop\\exporter " + fileame;// le chemin de fichier exporté
             FileOutputStream fileoutputstream = new FileOutputStream(fileame);// serialization de données
              JOptionPane.showMessageDialog(null, "Exporter ok! \t le chemin de fichier exporté: exporter"+fileame);
             System.out.print("le chemin de fichier exporté:");
