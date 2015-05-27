@@ -12,12 +12,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import static java.nio.channels.AsynchronousFileChannel.open;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -26,6 +34,7 @@ import javax.swing.ListSelectionModel;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
 import model.Module;
+import view.MainFrame;
 
 /**
  *
@@ -206,10 +215,28 @@ public class ModulePanel extends JPanel {
         final JButton submitButton = new JButton("Enregistrer");
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                saveData();
+                //saveData();
+                if (tableModel.getRowCount() != 0) {
+                    String filePath = "C:\\Users\\Administrator\\Desktop\\module" + System.currentTimeMillis() + ".dat";
+                    try {
+                        FileOutputStream fileOs = new FileOutputStream(filePath);
+                        ObjectOutputStream objectOs = new ObjectOutputStream(fileOs);
+                        objectOs.writeObject(tableModel);
+                        objectOs.close();
+                        JOptionPane.showMessageDialog(null, "Modules were saved. ");
+                    } catch (IOException e2) {
+                        System.out.print(e.toString());
+                    }
+                }
+                        /*(FileNotFoundException ex) {
+                    Logger.getLogger(ModulePanel.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(ModulePanel.class.getName()).log(Level.SEVERE, null, ex);
+                }*/
+
             }
 
-            private void saveData() {
+           /* private void saveData() {
                // int col = tableModel.getColumnCount();
                 int row = tableModel.getRowCount();
                 int i=0;
@@ -222,7 +249,7 @@ public class ModulePanel extends JPanel {
                           m.setDuree((int) tableModel.getValueAt(i, 5));
                        mListe.add(m);                   
                // }
-            }
+            }*/
             
             
 
@@ -245,7 +272,7 @@ public class ModulePanel extends JPanel {
     /**
      * @param args
      */
-     
+      
     public static void main(String args[]) {
         JFrame f=new JFrame();
          f.setBounds(5, 5, 950, 350);

@@ -14,6 +14,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import static javax.swing.GroupLayout.PREFERRED_SIZE;
@@ -21,6 +24,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -250,6 +254,18 @@ public class FormationPanel extends JPanel {
         final JButton submitButton = new JButton("Enregistrer");
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                if (tableModel.getRowCount() != 0) {
+                    String filePath = "C:\\Users\\Administrator\\Desktop\\formation" + System.currentTimeMillis() + ".dat";
+                    try {
+                        FileOutputStream fileOs = new FileOutputStream(filePath);
+                        ObjectOutputStream objectOs = new ObjectOutputStream(fileOs);
+                        objectOs.writeObject(tableModel);
+                        objectOs.close();
+                        JOptionPane.showMessageDialog(null, "formations were saved! ");
+                    } catch (IOException e2) {
+                        System.out.print(e.toString());
+                    }
+                }
             }
         });
         panelSubmit.add(submitButton);
