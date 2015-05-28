@@ -210,6 +210,7 @@ public class ModulePanel extends JPanel {
 //PanelSubmit************************************************************************************
         /**
          * PanelSubmit: Enregistrer les opérations;
+         * serialization les données de table.
          */
         // panelSubmit.setPreferredSize(new Dimension(100, 40));
         final JButton submitButton = new JButton("Enregistrer");
@@ -217,7 +218,7 @@ public class ModulePanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 //saveData();
                 if (tableModel.getRowCount() != 0) {
-                    String filePath = "C:\\Users\\Administrator\\Desktop\\module" + System.currentTimeMillis() + ".dat";
+                    String filePath = "C:\\Users\\Administrator\\Desktop\\module" +".dat";//+ System.currentTimeMillis()
                     try {
                         FileOutputStream fileOs = new FileOutputStream(filePath);
                         ObjectOutputStream objectOs = new ObjectOutputStream(fileOs);
