@@ -175,6 +175,7 @@ public class ModulePanel extends JPanel {
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String[] rowValues = {moduleText.getText(), abbText.getText(), colorText.getText(), seanceText.getText(),dureeMText.getText()};
+             
                 tableModel.addRow(rowValues); //ajouter un ligne
                 int rowCount = moduleTable.getRowCount() + 1; //nb de ligne +1
                 moduleText.setText("");
@@ -284,7 +285,7 @@ public class ModulePanel extends JPanel {
         JFrame f=new JFrame();
          f.setBounds(5, 5, 950, 350);
           ModulePanel c=new ModulePanel();
-          System.out.print("dfdfdf"+c.mListe.get(0).getAbbreviation());
+
         f.setVisible(true);
         f.add(c);
       
