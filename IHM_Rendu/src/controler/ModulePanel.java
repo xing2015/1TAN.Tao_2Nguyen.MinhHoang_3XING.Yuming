@@ -66,6 +66,7 @@ public class ModulePanel extends JPanel {
         mListe = new ArrayList<>();
         mListe.add(new Module("Java", "java", "red", 45, 90));
         mListe.add(new Module("Base de données", "BD", "blue", 45, 90));
+        
     }
 
     private void initComponents() {
@@ -102,7 +103,7 @@ public class ModulePanel extends JPanel {
         /**
          * PanelModule : liste des modules
          */
-        Object[][] mRow = null;
+        Object[][] mRow = {};
         // Object[][] mRow = {{"Java","java", "red",45,90}};
         /* for (int i = 0; i <= mListe.size(); i++) {
          Module om = mListe.get(i);
@@ -112,7 +113,13 @@ public class ModulePanel extends JPanel {
          mRow[i][3]=mListe.get(i).getNbSeance();
          mRow[i][4]=mListe.get(i).getDuree();
          };*/
-
+         
+        /* mRow[0][0]=mListe.get(0).getNom();
+         mRow[0][1]=mListe.get(0).getAbbreviation();
+         mRow[0][2]=mListe.get(0).getCouleur();
+         mRow[0][3]=mListe.get(0).getNbSeance();
+         mRow[0][4]=mListe.get(0).getDuree();*/
+        
         Object[] mCol = {"Module", "abbreviation", "Couleur", "Nombre de séance", "Durée "};
         tableModel = new DefaultTableModel(mRow, mCol);
         moduleTable = new JTable(tableModel);
@@ -217,7 +224,7 @@ public class ModulePanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 //saveData();
                 if (tableModel.getRowCount() != 0) {
-                    String filePath = "C:\\Users\\Administrator\\Desktop\\module" + System.currentTimeMillis() + ".dat";
+                    String filePath = "C:\\Users\\IT\\Desktop\\module" + System.currentTimeMillis() + ".dat";
                     try {
                         FileOutputStream fileOs = new FileOutputStream(filePath);
                         ObjectOutputStream objectOs = new ObjectOutputStream(fileOs);
@@ -277,6 +284,7 @@ public class ModulePanel extends JPanel {
         JFrame f=new JFrame();
          f.setBounds(5, 5, 950, 350);
           ModulePanel c=new ModulePanel();
+          System.out.print("dfdfdf"+c.mListe.get(0).getAbbreviation());
         f.setVisible(true);
         f.add(c);
       

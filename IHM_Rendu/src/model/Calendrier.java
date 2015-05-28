@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,7 +12,7 @@ import java.util.Calendar;
  * @author TAN
  * @author MINHHOANG
  */
-public class Calendrier {
+public class Calendrier implements Serializable{
 	private int annee;
         private int mois;
 
