@@ -14,8 +14,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
@@ -59,7 +61,7 @@ public class FormationPanel extends JPanel {
         initComponents();
     }
 
-    private void initComponents() {
+    private void initComponents() throws ClassNotFoundException {
         nomText = new JTextField("          ", 10);
         dureeSText = new JTextField("           ", 10);
         dureeFmText = new JTextField("          ", 10);
@@ -215,9 +217,21 @@ public class FormationPanel extends JPanel {
          });
          panelAdd.add(updateButton);*/
         panelAdd.add(new JLabel("Module: "));
-        mListe = new JComboBox();
+        mListe = new JComboBox(); 
         mListe.setModel(new DefaultComboBoxModel(new String[]{}));
-
+            try {
+                FileInputStream fileIn= new FileInputStream("C:\\Users\\Administrator\\Desktop\\module");
+                ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+                //Partie instance = (Partie)objectIn.readObject();
+                DefaultTableModel tbModel;
+                tbModel = (DefaultTableModel)objectIn.readObject();// recovery of the objet partie
+                Object ItemModule = tbModel.getValueAt(i, j);
+                                   
+                objectIn.close();
+        }catch(IOException e1){
+        
+        }
+        
         panelAdd.add(mListe);
 
         final JButton addButton = new JButton("Ajouter");//ajouter
