@@ -16,17 +16,17 @@ import java.util.Observable;
  * @author xing
  */
 public class Planning extends Observable implements Serializable{
-        private Formation formation;	
-        private List<Seance> listS;
-       
+        //private Formation formation;	
+        private ArrayList<Seance> listS;
         
-    public Planning() {
-       formation = new Formation();
-       listS = new ArrayList<Seance>();
+        
+    public Planning(ArrayList<Seance> list) {
+       this.listS = list;
+       
        setFormation();      
     }
 
-    public void setListSeance(){
+    /*public void setListSeance(){
         listS.add(new Seance("2015-09-01","Matin",this.formation.getListeModule().get(0).getNom(),this.formation.getNom()));
         listS.add(new Seance("2015-09-02","Matin",this.formation.getListeModule().get(0).getNom(),this.formation.getNom()));
         listS.add(new Seance("2015-09-03","Matin",this.formation.getListeModule().get(0).getNom(),this.formation.getNom()));
@@ -43,7 +43,8 @@ public class Planning extends Observable implements Serializable{
         formation.setNom("L3-FI");
         formation.setDuree(500);
         formation.setListeModule(listM);
-    }
+    }*/
+    
     
    
 }

@@ -51,7 +51,7 @@ public class FormationPanel extends JPanel {
     private JScrollPane jScrollPane1;
     private JComboBox mListe;
 
-    public FormationPanel() {
+    public FormationPanel() throws ClassNotFoundException {
         super();
         // setTitle("Gestion de formation");
         setBounds(5, 5, 950, 450);
@@ -225,7 +225,7 @@ public class FormationPanel extends JPanel {
                 //Partie instance = (Partie)objectIn.readObject();
                 DefaultTableModel tbModel;
                 tbModel = (DefaultTableModel)objectIn.readObject();// recovery of the objet partie
-                Object ItemModule = tbModel.getValueAt(i, j);
+             //   Object ItemModule = tbModel.getValueAt(i, j);
                                    
                 objectIn.close();
         }catch(IOException e1){

@@ -28,7 +28,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         //calendrier=new Calendrier();
-        planning = new Planning();
+        //planning = new Planning();
         initComponents();
     }
 
@@ -42,9 +42,13 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        calendrierPanel1 = new view.CalendrierPanel();
+        calendrierPanel1 = new controler.CalendrierPanel();
         modulePanel1 = new controler.ModulePanel();
-        formationPanel1 = new controler.FormationPanel();
+        try {
+            formationPanel1 = new controler.FormationPanel();
+        } catch (java.lang.ClassNotFoundException e1) {
+            e1.printStackTrace();
+        }
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -90,10 +94,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
         );
 
         pack();
@@ -163,7 +164,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.CalendrierPanel calendrierPanel1;
+    private controler.CalendrierPanel calendrierPanel1;
     private controler.FormationPanel formationPanel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
