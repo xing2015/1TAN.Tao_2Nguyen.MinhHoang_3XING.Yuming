@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import model.Calendrier;
+import model.Planning;
 
 /**
  *
@@ -21,12 +22,13 @@ import model.Calendrier;
  * @author MINHHOANG
  */
 public class MainFrame extends javax.swing.JFrame {
-    Calendrier calendrier;
+     Planning planning;
     /**
      * Creates new form NewJFrame
      */
     public MainFrame() {
-        calendrier=new Calendrier();
+        //calendrier=new Calendrier();
+        planning = new Planning();
         initComponents();
     }
 
@@ -109,7 +111,7 @@ public class MainFrame extends javax.swing.JFrame {
             try {
                 FileOutputStream fileOs = new FileOutputStream(filePath);
                 ObjectOutputStream objectOs = new ObjectOutputStream(fileOs);
-                objectOs.writeObject(calendrier);
+                objectOs.writeObject(planning);
                 objectOs.close();
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
