@@ -15,24 +15,10 @@ import java.util.List;
  */
 public class Formation {
 
-    /**
-     *
-     */
     public String nom;
-
-    /**
-     *
-     */
     public int duree;
-
-    /**
-     *
-     */
     public List<Module> listeModule;
 
-    /**
-     *
-     */
     public Formation() {
     }
 

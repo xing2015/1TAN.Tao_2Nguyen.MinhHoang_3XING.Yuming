@@ -24,6 +24,7 @@ import model.Calendrier;
 import controler.ExporterHtml;
 import java.awt.Dimension;
 import javax.swing.JOptionPane;
+import model.Planning;
 
 /**
  *
@@ -146,7 +147,80 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
 
 	}
         
-     
+     public CalendrierPanel(Planning planing) {
+		JPanel pCenter = new JPanel();
+                pCenter.setPreferredSize(new Dimension(400,400));
+		pCenter.setLayout(new GridLayout(7, 7));
+		for (int i = 0; i < 7; i++) {
+			titleName[i] = new JButton(weeks[i]);
+			pCenter.add(titleName[i]);
+		}
+
+		for (int i = 2010; i <= 2050; i++) {
+			anneeChoice.addItem(i + "");
+		}
+
+		for (int i = 1; i <= 12; i++) {
+			moisChoice.addItem(i + "");
+		}
+
+		anneeChoice.select(String.valueOf(annee));
+		moisChoice.select(String.valueOf(mois));
+		text.addActionListener(this);
+		calendrier = new Calendrier();
+		calendrier.setAnnee(annee);
+		calendrier.setMois(mois);
+		jour = calendrier.getCalendrier();
+
+		for (int i = 0; i < jour.length; i++) {
+			JPanel jPanel = new JPanel();
+			jPanel.setLayout(new GridLayout(3, 1));
+			dayLabels[i] = new JLabel("", JLabel.CENTER);
+			textFieldsAM[i] = new JTextField();
+			textFieldsPM[i] = new JTextField();
+			jPanel.add(dayLabels[i]);
+			jPanel.add(textFieldsAM[i]);
+			jPanel.add(textFieldsPM[i]);
+			pCenter.add(jPanel);
+			dayLabels[i].setText(jour[i]);
+			if (jour[i] == null || (i - 5) % 7 == 0 || (i - 6) % 7 == 0) {
+				textFieldsAM[i].setEditable(false);
+				textFieldsPM[i].setEditable(false);
+			}
+		}
+               
+		jButton1.addActionListener(this);
+	//	JPanel pNorth = new JPanel();
+		JPanel pSouth = new JPanel();
+		pSouth.add(anneeChoice);
+		pSouth.add(moisChoice);
+		pSouth.add(jButton1);
+                
+                exporter.addActionListener(new ActionListener() {
+                  public void actionPerformed(ActionEvent e) 
+                  {
+                     if (e.getSource() == exporter)
+                     {
+                      annee = Integer.parseInt(anneeChoice.getSelectedItem());
+                      ex = new ExporterHtml(annee);
+                       
+                      }
+                  }
+                 }
+                );
+                 
+                pSouth.add(exporter); 
+
+		ScrollPane scrollPane = new ScrollPane();
+		scrollPane.add(pCenter);              
+		add(scrollPane, BorderLayout.NORTH);
+	//	add(pNorth, BorderLayout.NORTH);
+		add(pSouth, BorderLayout.SOUTH);
+                
+                scrollPane.setPreferredSize(new Dimension(450, 450));
+                
+	}
+
    /*     
  public static void main(String args[]) {
         JFrame f=new JFrame();

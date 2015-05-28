@@ -5,6 +5,16 @@
  */
 package view;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import model.Calendrier;
+import model.Planning;
+
 /**
  *
  * @author YUMING
@@ -12,11 +22,13 @@ package view;
  * @author MINHHOANG
  */
 public class MainFrame extends javax.swing.JFrame {
-
+     Planning planning;
     /**
      * Creates new form NewJFrame
      */
     public MainFrame() {
+        //calendrier=new Calendrier();
+        planning = new Planning();
         initComponents();
     }
 
@@ -33,12 +45,42 @@ public class MainFrame extends javax.swing.JFrame {
         calendrierPanel1 = new view.CalendrierPanel();
         modulePanel1 = new controler.ModulePanel();
         formationPanel1 = new controler.FormationPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPane1.addTab("Planning", calendrierPanel1);
         jTabbedPane1.addTab("Gestion de module", modulePanel1);
         jTabbedPane1.addTab("Gestion de Formation", formationPanel1);
+
+        jMenu1.setText("File");
+
+        jMenuItem1.setText("save planning");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("load planning");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,12 +92,39 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    
+        // TODO add your handling code here:
+        JFileChooser open = new JFileChooser();
+        open.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int returnVal = open.showSaveDialog(null);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+             
+            String filePath = open.getSelectedFile().getPath() + "\\Planning"+System.currentTimeMillis()+".dat";
+            try {
+                FileOutputStream fileOs = new FileOutputStream(filePath);
+                ObjectOutputStream objectOs = new ObjectOutputStream(fileOs);
+                objectOs.writeObject(planning);
+                objectOs.close();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,6 +165,11 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private view.CalendrierPanel calendrierPanel1;
     private controler.FormationPanel formationPanel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private controler.ModulePanel modulePanel1;
     // End of variables declaration//GEN-END:variables
