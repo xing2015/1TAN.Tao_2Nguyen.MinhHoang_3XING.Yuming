@@ -23,7 +23,7 @@ public class Planning extends Observable implements Serializable{
     public Planning(ArrayList<Seance> list) {
        this.listS = list;
        
-       setFormation();      
+       
     }
 
     /*public void setListSeance(){

@@ -26,9 +26,11 @@ import controler.ExporterHtml;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import model.Planning;
+import model.Seance;
 
 /**
  *
@@ -55,14 +57,17 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
     Calendrier calendrier;
     private String[] jour;
      
+    private ArrayList<Seance> seanceListe =new ArrayList<Seance>();
 
     public CalendrierPanel() {
+        initSeanceListe();
         JPanel pCenter = new JPanel();
-        pCenter.setPreferredSize(new Dimension(700, 500));
+        pCenter.setPreferredSize(new Dimension(800, 400));
         pCenter.setLayout(new GridLayout(7, 7));
         for (int i = 0; i < 7; i++) {
             titleName[i] = new JButton(weeks[i]);
             pCenter.add(titleName[i]);
+            titleName[i].setPreferredSize(new Dimension(40,40));
         }
 
         for (int i = 2010; i <= 2020; i++) {
@@ -84,15 +89,15 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
         for (int i = 0; i < jour.length; i++) {
             JPanel jPanel = new JPanel();
             jPanel.setLayout(new GridLayout(3, 1));
-            jPanel.setPreferredSize(new Dimension(140,40));
+            jPanel.setPreferredSize(new Dimension(140,100));
             dayLabels[i] = new JLabel("", JLabel.CENTER);
             textFieldsAM[i] = new JTextField();
             textFieldsPM[i] = new JTextField();
-            seanceButtonAM[i]  = new JButton();
-            seanceButtonPM[i]  = new JButton();
+            seanceButtonAM[i]  = new JButton(getSeanceInfo());
+            seanceButtonPM[i]  = new JButton(getSeanceInfo());
             jPanel.add(dayLabels[i]);
           // jPanel.add(textFieldsAM[i]);
-           seanceButtonAM[i].setPreferredSize(new Dimension(40,40));
+           
             jPanel.add(seanceButtonAM[i] );
             jPanel.add(seanceButtonPM[i] );
             
@@ -155,7 +160,7 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
         //	add(pNorth, BorderLayout.NORTH);
         add(pSouth, BorderLayout.SOUTH);
 
-        scrollPane.setPreferredSize(new Dimension(750, 550));
+        scrollPane.setPreferredSize(new Dimension(850, 600));
 
     }
 
@@ -170,11 +175,16 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
             for (int i = 0; i < jour.length; i++) {
                 dayLabels[i].setText(jour[i]);
                 if (jour[i] == null || (i - 5) % 7 == 0 || (i - 6) % 7 == 0) {
-                    textFieldsAM[i].setEditable(false);
-                    textFieldsPM[i].setEditable(false);
+                   // textFieldsAM[i].setEditable(false);
+                    //textFieldsPM[i].setEditable(false);
+                    seanceButtonAM[i].setVisible(false);
+                    seanceButtonPM[i].setVisible(false);
+                 //   seanceButtonAM[i].setForeground(Color.red);
                 } else {
-                    textFieldsAM[i].setEditable(true);
-                    textFieldsPM[i].setEditable(true);
+                   // textFieldsAM[i].setEditable(true);
+                    //textFieldsPM[i].setEditable(true);
+                     seanceButtonAM[i].setVisible(true);
+                    seanceButtonPM[i].setVisible(true);
                 }
             }
 
@@ -182,14 +192,24 @@ public class CalendrierPanel extends javax.swing.JPanel implements ActionListene
 
     }
 
+      public void initSeanceListe() {
+          seanceListe.add(new Seance("2015-09-01","matin","Java","L1"));
+          seanceListe.add(new Seance("2015-01-01","matin","Java","L1"));
+      }
+      
+      public String getSeanceInfo(){
+       return "waiting";
+      }
       
      public static void main(String args[]) {
      JFrame f=new JFrame();
      CalendrierPanel c=new CalendrierPanel();
-     f.setBounds(10,10,500,500);
+     f.setBounds(10,10,700,500);
      f.setVisible(true);
      f.add(c);
       
         
      }
+
+    
 }
