@@ -1,0 +1,100 @@
+class TestFormation
+{
+  
+}
+
+
+
+class TestModule{
+
+}
+
+class TestSeance{
+
+}
+
+class TestPlanning{
+  Planning plan=new Planning();
+  
+  @before
+  pubic initPlanning(){
+     ArrayListe<Seance> list = new ArrayList<Seance>;
+     list.add(new Seance("2015-01-01","matin","Java","L3"))
+     plan.setSeanceListe(list);
+  
+  }
+  
+  public void testSetAnnee(){
+  
+  }
+  
+  public void testSetSeanceList(){
+ 
+  }
+  
+  /*
+  *tester si le cellule peut bien reçu la séance.
+  **/
+  public void testGetSeance(){
+   testDate = "2015-01-01";
+   testTime = "matin";
+  
+   test = plan.getSeance(testDate,testTime);    
+   result1 = test.getModule();
+   result2 = test.getFormation();
+   
+   assertEquals("Java",result1);
+   assertEquals("L3",result2);
+  }
+
+  @test
+  /*
+  *tester le jour ferié
+  **/
+  public void testIsFerie(){
+    boolean result = plan.isFerie("2015-05-30");
+    assertEquals(true,result);
+  }
+
+@test
+/*
+*tester sérialization
+**/
+public void testSerialisation()
+{
+  planning.serialisation();
+
+
+}
+
+@test
+/*
+*
+**/
+poblic void testSetFormation(){
+
+
+}
+
+@test
+/*
+*
+**/
+public void testGetNbSeanceModule(){
+
+}
+
+@test
+/*
+*tester le isMoreSeance
+**/
+
+public void testIsMoreSeance(){
+  Module module = new Module();
+  int nbSeanc = plan.nbSeance(module);
+  boolean result = plan.isMoreSeance(module);
+  
+}
+
+
+}
